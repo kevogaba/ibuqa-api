@@ -31,7 +31,7 @@ jobs:
         version-file: './my_custom_version_file.json'
         version-path: 'path.to.version'
         git-branch: 'release'
-        git-user-name: ${{ steps.import-gpg.outputs.name }}
+        git-user-name: ${{ steps.import-gpg.outputs.username }}
         git-user-email: ${{ steps.import-gpg.outputs.email }}
         
     - name: Create Release    
