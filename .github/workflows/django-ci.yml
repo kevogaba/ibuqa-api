@@ -1,13 +1,10 @@
 name: Releases
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   changelog:
     runs-on: ubuntu-latest
-
+    if: github.ref == 'refs/heads/release'
     steps:
       - uses: actions/checkout@v3
       - name: Conventional Changelog Action
