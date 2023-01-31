@@ -5,7 +5,6 @@ jobs:
   release:
     name: release
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/release'
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -28,8 +27,6 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         output-file: "false"
-        version-file: './my_custom_version_file.json'
-        version-path: 'path.to.version'
         skip-commit: 'true'
         git-user-name: ${{ steps.import-gpg.outputs.username }}
         git-user-email: ${{ steps.import-gpg.outputs.email }}
