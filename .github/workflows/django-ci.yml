@@ -23,14 +23,15 @@ jobs:
         git_commit_gpgsign: true
         
     - name: Conventional Changelog Action
-      uses: TriPSs/conventional-changelog-action@v3
+      uses: TriPSs/conventional-changelog-action@v3 
       id: changelog
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         output-file: "false"
         version-file: './my_custom_version_file.json'
         version-path: 'path.to.version'
-        skip-commit: 'true'
+        skip-commit: 'false'
+        skip-version-file: 'true'
         git-user-name: ${{ steps.import-gpg.outputs.username }}
         git-user-email: ${{ steps.import-gpg.outputs.email }}
         
