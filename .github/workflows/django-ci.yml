@@ -23,7 +23,7 @@ jobs:
         git_commit_gpgsign: true
         
     - name: Conventional Changelog Action
-      uses: TriPSs/conventional-changelog-action@v4
+      uses: TriPSs/conventional-changelog-action@v3
       id: changelog
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
