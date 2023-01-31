@@ -26,15 +26,13 @@ jobs:
       uses: TriPSs/conventional-changelog-action@v3
       id: changelog
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         output-file: "false"
         version-file: './my_custom_version_file.json'
         version-path: 'path.to.version'
-        git-branch: 'release'
-        GIT_AUTHOR_NAME: ${{ steps.import-gpg.outputs.name }}
-        GIT_AUTHOR_EMAIL: ${{ steps.import-gpg.outputs.email }}
-        GIT_COMMITTER_NAME: ${{ steps.import-gpg.outputs.name }}
-        GIT_COMMITTER_EMAIL: ${{ steps.import-gpg.outputs.email }}
+        skip-commit: 'true'
+        git-user-name: ${{ steps.import-gpg.outputs.username }}
+        git-user-email: ${{ steps.import-gpg.outputs.email }}
         
     - name: Create Release    
       uses: actions/create-release@v1
