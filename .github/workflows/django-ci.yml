@@ -3,7 +3,7 @@ name: Releases
 on: [push]
 
 jobs:
-  changelog:
+  changelog:  
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/release'
     steps:
@@ -11,6 +11,7 @@ jobs:
       - name: Conventional Changelog Action
         uses: TriPSs/conventional-changelog-action@v3
         id: changelog
+        
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           output-file: "false"
