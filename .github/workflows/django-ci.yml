@@ -4,9 +4,6 @@ on: [push]
 
 jobs:
   changelog:  
-  
-  
-  
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/release'
     steps:
